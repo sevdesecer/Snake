@@ -14,8 +14,7 @@ public class App {
 
         SnakeGame snakeGame = new SnakeGame(boardWidth, boardHeight);
         frame.add(snakeGame);
-        frame.pack();   // Resize the frame to fit its components.
+        frame.pack(); // Resize the frame to fit its components.
         snakeGame.requestFocus(); 
-        
     }
 }

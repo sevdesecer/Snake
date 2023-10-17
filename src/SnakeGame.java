@@ -78,8 +78,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
         //Create Food's proporties + change color 
         Random random = new Random();
-        Color randomColor = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256), random.nextInt(256));
-
+        Color randomColor = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255), random.nextInt(255));
         g.setColor(randomColor);
         g.fillRect(food.x*tileSize, food.y*tileSize, tileSize, tileSize);
 
