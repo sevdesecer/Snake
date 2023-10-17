@@ -68,22 +68,24 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
         //Create Snake's proporties
         g.setColor(Color.green);
-        g.fill3DRect(snakeHead.x*tileSize, snakeHead.y*tileSize, tileSize, tileSize, true); //fillRect = Fills the specified rectangle
+        g.fillRect(snakeHead.x*tileSize, snakeHead.y*tileSize, tileSize, tileSize); //fillRect = Fills the specified rectangle
 
         //Snake Body
         for (int i = 0; i < snakeBody.size(); i++) {
             Tile snakePart = snakeBody.get(i);
-            g.fill3DRect(snakePart.x*tileSize, snakePart.y*tileSize, tileSize, tileSize, true);
+            g.fillRect(snakePart.x*tileSize, snakePart.y*tileSize, tileSize, tileSize);
         }
 
-        //Create Food's proporties
-        g.setColor(Color.red);
-        g.fill3DRect(food.x*tileSize, food.y*tileSize, tileSize, tileSize,true);
+        //Create Food's proporties + change color 
+        Random random = new Random();
+        Color randomColor = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256), random.nextInt(256));
+
+        g.setColor(randomColor);
+        g.fillRect(food.x*tileSize, food.y*tileSize, tileSize, tileSize);
 
         //Score
         g.setFont(new Font("Arial", Font.PLAIN, 16));
         if (gameOver) {
-            g.setColor(Color.red);
             g.drawString("Game Over: " + String.valueOf(snakeBody.size()), tileSize - 16, tileSize);
         }
         else {
